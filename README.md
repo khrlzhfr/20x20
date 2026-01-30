@@ -1,2 +1,2 @@
-# 20x20
-20 minutes × 20 slides. Inspired by PechaKucha. 
+# 20 minutes × 20 slides
+Inspired by PechaKucha
