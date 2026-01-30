@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A simple </title>
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-black text-light">
+    <div id="upload-screen" class="upload-screen">
+        <div id="drop-zone" class="drop-zone">
+            <div class="content-wrapper p-1">
+                <div class="rules mb-5">
+                    <img src="logo.svg" alt="Logo" width="90" class="mb-3">
+                    <h1 class="mb-3">20 minutes × 20 slides</h1>
+                    <p class="opacity-50"><small>Inspired by PechaKucha</small></p>
+                    <br>
+                    <p>Your presentation must be in a PDF file with up to 20 slides.</p>
+                    <p>Each slide is shown for exactly 20 seconds.</p>
+                    <p>The maximum presentation time is 6 minutes 40 seconds.</p>
+                    <p>Slides advance automatically and you cannot pause or go back.</p>
+                </div>
+                <div class="upload-area mb-5">
+                    <p>
+                        <label for="file-input" class="btn btn-outline-light btn-lg">Open a file...</label>
+                        <input type="file" id="file-input" accept="application/pdf" class="d-none">
+                    </p>
+                    <p class="opacity-50"><small>... or just drag and drop it on this page</small></p>
+                </div>
+                <div id="status-area" class="status-area mb-5">
+                    <div id="loading" class="d-none mb-3">
+                        <div class="spinner-border opacity-50" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p>Loading presentation...</p>
+                    </div>
+                    <div id="error-message" class="d-none mb-3" role="alert"></div>
+                    <div id="ready-area" class="d-none mb-3">
+                        <p id="ready-message"></p>
+                        <p><button id="start-btn" class="btn btn-light btn-lg">Start presentation now</button></p>
+                        <br>
+                        <p class="opacity-50"><small>Press <kbd class="bg-light text-dark">esc</kbd> at any time to exit full screen</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="drag-overlay" class="drag-overlay d-none bg-black p-1">
+            <img src="logo.svg" alt="Logo" width="90" class="mb-3">
+            <p class="opacity-50">Drop your file here...</p>
+        </div>
+    </div>
+    
+    <div id="presentation-screen" class="presentation-screen d-none bg-black">
+        <div id="countdown-overlay" class="countdown-overlay d-none bg-black opacity-50">
+            <span id="countdown-number">3</span>
+        </div>
+        <div id="slide-container" class="slide-container d-none">
+            <canvas id="slide-canvas"></canvas>
+        </div>
+        <div id="progress-bar-container" class="progress-bar-container d-none bg-white opacity-25">
+            <div id="slide-progress" class="slide-progress bg-black opacity-75"></div>
+        </div>
+        <div id="end-screen" class="end-screen d-none bg-black"></div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
