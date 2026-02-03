@@ -1,2 +1,2 @@
-# 20 minutes × 20 slides
+# 20 slides × 20 seconds
 _Inspired by PechaKucha_
